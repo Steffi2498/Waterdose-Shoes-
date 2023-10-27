@@ -6,23 +6,10 @@
     
 }
 
-body
-{
-    margin:0;
-    padding:0;
-}
 .container1{
     width:100%;
 }
-#smoke
-{
-    display: flex;
-    z-index: -2;
-    width: 100vw;    
-    height: 100vh;
-    opacity: 0.7;
-    position:absolute;
-}
+
 .title{
     font-size: 7vw;
     color: white;
@@ -34,50 +21,131 @@ body
     flex-direction: column;
 }
 
+#smoke
+{
+    display: flex;
+    z-index: -2;
+    width: 100vw;    
+    height: 100vh;
+    opacity: 0.7;
+    position:absolute;
+}
+
 #af1{
     display: flex;
     z-index: -1;
-    transform: scale(1.5);
+    height: auto;
     position:absolute;
     padding:0;
     margin-right:auto;
-    animation: myfirst 5s;
+    animation:myfirst 5s linear ;
     animation-fill-mode: both;
+    opacity: 0.9;
 }
 
+.container1Content{
+    display: inline-block;
+}
 
-
-.contacts{
+.enterDoor{
     display: flex;
-    
+    justify-content: right;
 }
 
-.contactLinksContainer{
-    transform: scale(0.8);
+.enterDoor p{
+    font-size: xx-large;
 }
 
+.bigScreen, .smallScreen{
+    text-shadow: goldenrod 1px 0 10px;
+}
 
-.ri-linkedin-fill, .ri-instagram-fill, .ri-mail-line{
+.socialMediaContent{
+    display: flex;
+    flex-wrap: nowrap;
+    position: absolute;
+}
+
+.title a
+{
+    display:flex;
+    transform: scale(0.5);
+    /* z-index: -1; */
+    /* position:relative; */
     color:white;
     text-decoration: none;
 }
 
-.contactLinksContainer a{
-    text-decoration: none;  
+.socialMediaContent a:hover, .enterDoor:hover{
+    color: wheat;
 }
 
-.contactLinksContainer a:hover{
-    text-decoration: underline;
-    text-decoration-color: wheat;
+.enterDoor p:hover{
+    border-bottom: 10px solid wheat;
+    border-radius: 5px;
     
 }
 
-.ri-linkedin-fill:hover, .ri-instagram-fill:hover, .ri-mail-line:hover{
-    color:wheat;
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 500px) {
+    .bigScreen{
+        display: none;
+    }
+    .smallScreen{
+        font-size: 100px;
+    }
+    #af1{
+        width: 75vw;
+    }
+    #smoke{
+        transform: rotate(-90deg);
+        height:100%; 
+        width:auto;
+        /* top:0;
+        bottom:0; */
+        /* position: absolute; */
+    }
+
+    @keyframes myfirst {
+        0% {right: 100%;}
+        100%{right: 10%;}
+        /* 100%{left:100%; } */
+    }
 }
 
-@keyframes myfirst {
-    0% {left: 0vw;}
-     75% {left:66vw;}
-     100%{left: 40vw;}
+@media only screen and (min-width: 501px) and (max-width:1024px){
+    .smallScreen{
+        display:none;
+    }
+    #af1{
+        width: 50vw;
+    }
+
+    @keyframes myfirst {
+        0% {right: 100%;}
+        100%{right: 0%;}
+        /* 100%{left:100%; } */
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    #af1{
+        width: 35vw;
+    }
+    .smallScreen{
+        display:none;
+    }
+
+    @keyframes myfirst {
+        0% {right: 100%;}
+        100%{right: 0%;}
+        /* 100%{left:100%; } */
+    }
 }
