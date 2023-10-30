@@ -2,9 +2,13 @@
     font-family:'Playfair Display',serif;
     margin:0;
     padding:0;
-    overflow: hidden;
+    /* overflow: hidden; */
     
 }
+
+/* html{
+    scroll-behavior: smooth;
+} */
 
 .container1{
     width:100%;
@@ -86,8 +90,22 @@
     
 }
 
+#home{
+    display: grid;
+    grid-template-columns: auto auto;
+    height: 100vh;
+    position: absolute;
+}
 
+#navBar{
+    width: 10vw;
+    background-color: red;
+}
 
+#fourchoices{
+    width: 90vw;
+    background-color: green;
+}
 
 
 
