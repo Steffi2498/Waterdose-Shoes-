@@ -2,9 +2,12 @@
     font-family:'Playfair Display',serif;
     margin:0;
     padding:0;
-    overflow: hidden;
-    
+    overflow-x: hidden;
 }
+::-webkit-scrollbar {
+    display: none;
+  }
+
 
 html{
     scroll-behavior: smooth;
@@ -25,7 +28,7 @@ html{
     flex-direction: column;
 }
 
-#smoke
+#mainbg
 {
     display: flex;
     z-index: -2;
@@ -33,18 +36,7 @@ html{
     height: 100vh;
     opacity: 0.7;
     position:absolute;
-}
-
-#af1{
-    display: flex;
-    z-index: -1;
-    height: auto;
-    position:absolute;
-    padding:0;
-    margin-right:auto;
-    animation:myfirst 5s linear ;
-    animation-fill-mode: both;
-    opacity: 0.9;
+    filter: brightness(50%); 
 }
 
 .container1Content{
@@ -56,12 +48,13 @@ html{
     justify-content: right;
 }
 
-.enterDoor p{
-    font-size: xx-large;
+.enterDoor a{
+    font-size:45px;
 }
 
 .bigScreen, .smallScreen{
     text-shadow: goldenrod 1px 0 10px;
+    position: relative;
 }
 
 .socialMediaContent{
@@ -84,48 +77,136 @@ html{
     color: wheat;
 }
 
-.enterDoor p:hover{
+.enterDoor a:hover{
     border-bottom: 10px solid wheat;
     border-radius: 5px;
     
 }
 
-#home{
-    display: grid;
-    grid-template-columns: auto auto;
-    height: 100vh;
-    position: absolute;
+#home, #about{
+    background-color: #77787B;
 }
 
-/* #navBar{
-    width: 10vw;
-} */
+.navBar{
+  top: 0;
+  position: relative;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  
+} 
+
+.navBar a{
+    display: block;
+    color:white;
+    text-align: center;
+    text-decoration: none;
+    padding: 30px 40px;
+    width: fit-content;
+    margin: 0 auto;
+    /* letter-spacing: 5px; */
+}
+
 
 #fourchoices{
     /* width: 90vw; */
     display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto;
-    height: 100vh;
+    /* grid-template-columns: auto auto auto auto; */
+    /* grid-template-rows: auto auto; */
+    height: 80vh;
     row-gap: 20px;
     column-gap: 20px;
     padding: 5px;
+    padding: 20px;
 }
+
 
 #option1, #option2, #option3, #option4{
     display: grid;
     justify-content: center;
     align-content: center;
+    /* align-items:end; */
     letter-spacing: 5px;
+    text-align: center;
+    height: auto;
+    /* height: 70vh; */
+    /* word-wrap: break-word; */
+    box-shadow: 2px 4px 8px 2px rgba(46, 49, 46, 0.8);
+    overflow-y: hidden;
+}
+
+#option1{
+    background-image: url("./photos/karsten-winegeart-XYPpdLW07_M-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 40%;
+}
+
+#option2{
+    background-image: url("./photos/sandie-clarke-HcqgubITDbU-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    /* background-position: -30px; */
+    opacity: 40%;
+}
+
+#option3{
+    background-image: url("./photos/kaizen-nguy-n-ee5yWSeHPuw-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 40%;
+}
+
+#option4{
+    background-image: url("./photos/florian-klauer-mk7D-4UCfmg-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 40%;
+}
+
+#option1 h1, #option2 h1, #option3 h1, #option4 h1{
+    background-color: rgba(255, 255, 255, 0.50);
+}
+
+#option1 a, #option2 a, #option3 a, #option4 a{
+    position: relative;
+    top:100%;
+    transform: scale(3);
+    color:white;
+    text-decoration: none;
+   
+}
+
+#option1:hover, #option2:hover, #option3:hover, #option4:hover{
+    opacity: 100%;
+    box-shadow: 2px 4px 8px 2px rgba(55, 66, 57, 0.8);
+}
+
+#about{
+    height:100vh;
+}
+
+#about h1{
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+#test {
+    display: grid;
+    grid-template-columns: auto auto ;
+    width: 100vw;
     text-align: center;
 }
 
-#option1, #option4{
-    background-color: lightblue;
+.imageAbout{
+    width: 50%;
 }
-#option2, #option3{
-    background-color: lightcoral;
+
+.divAbout{
+    height:auto;
 }
+
+
 
 
 @media only screen and (max-width: 500px) {
@@ -138,7 +219,7 @@ html{
     #af1{
         width: 75vw;
     }
-    #smoke{
+    #mainbg{
         transform: rotate(-90deg);
         height:100%; 
         width:auto;
@@ -146,11 +227,8 @@ html{
         bottom:0; */
         /* position: absolute; */
     }
-
-    @keyframes myfirst {
-        0% {right: 100%;}
-        100%{right: 10%;}
-        /* 100%{left:100%; } */
+    #option1, #option2, #option3, #option4{
+        opacity: 90%;
     }
 }
 
@@ -161,11 +239,9 @@ html{
     #af1{
         width: 50vw;
     }
-
-    @keyframes myfirst {
-        0% {right: 100%;}
-        100%{right: 0%;}
-        /* 100%{left:100%; } */
+    #fourchoices{
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
     }
 }
 
@@ -176,10 +252,7 @@ html{
     .smallScreen{
         display:none;
     }
-
-    @keyframes myfirst {
-        0% {right: 100%;}
-        100%{right: 0%;}
-        /* 100%{left:100%; } */
+    #fourchoices{
+        grid-template-columns: auto auto auto auto;
     }
 }
