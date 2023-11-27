@@ -1,0 +1,57 @@
+body{
+    margin:0 15px;
+}
+
+.contentDiv{
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+.test{
+    margin-bottom: 30px;
+}
+
+#filterBlock{
+    margin-right: 0;
+    padding-right: 0;
+    margin-left: 10px;
+}
+
+.cardView{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    /* height: max-content; */
+    gap:10px;
+    margin-right: 5px;
+}
+
+.cardItem{
+    /* border: 2px solid green; */
+    height: 55vh;
+    background-color: rgba(255,255,255,0.5);
+}
+
+.cardItem img{
+    width: 100%;
+    height: auto;
+}
+
+h3{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.filters select {
+    background-color:  #60677b;
+    color: white;
+    padding: 12px;
+    width: 250px;
+    border: none;
+    font-size: 20px;
+    outline: none;
+  }
+
+  .filters:hover::before {
+    color: rgba(51, 72, 128, 0.6);
+    background-color: rgba(53, 74, 133, 0.381);
+  }
